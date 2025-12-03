@@ -1,21 +1,17 @@
-- [🏠 Início](/)
-- [📖 Introdução](introducao.md)
-- [⚡ Quick Start](quick-start.md)
+<!-- _sidebar.md -->
 
-## 🔌 API Reference
-- [📡 Endpoints](api-endpoints.md)
-  - [Escopo 1](endpoints/escopo1.md)
-  - [Escopo 2](endpoints/escopo2.md)
-  - [Escopo 3](endpoints/escopo3.md)
-- [🔑 Autenticação](autenticacao.md)
-- [📊 Modelos de Dados](modelos-dados.md)
+- [Início](/)
 
-## 🛠️ Desenvolvimento
-- [🧪 Testes](testes.md)
-- [🐳 Docker & Deploy](docker-deploy.md)
-- [📦 Estrutura do Código](estrutura-codigo.md)
+**Documentação**
+- [Introdução](introducao.md)
 
-## ❓ Ajuda
-- [❓ FAQ](faq.md)
-- [🐛 Reportar Bug](reportar-bug.md)
-- [💡 Exemplos](exemplos.md)
+**API Reference**
+- *[Em breve]* Endpoints
+
+**Desenvolvimento**
+- *[Em breve]* Configuração
+- *[Em breve]* Testes
+
+**Recursos**
+- *[Em breve]* FAQ
+- *[Em breve]* Contato

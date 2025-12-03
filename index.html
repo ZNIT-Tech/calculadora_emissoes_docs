@@ -1,61 +1,241 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Calculadora de Emissões - API Docs</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-darklight-theme@3/dist/style.min.css">
-  <style>
-    :root {
-      --base-background-color: #0d1117;
-      --base-color: #c9d1d9;
-      --link-color: #58a6ff;
-    }
-    .app-name-link img {
-      height: 40px;
-      margin-right: 10px;
-      vertical-align: middle;
-    }
-    .sidebar ul li a {
-      color: #8b949e;
-    }
-    .sidebar ul li.active > a {
-      color: #58a6ff;
-      border-left: 2px solid #58a6ff;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Calculadora de Emissões | ZNIT</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documentação da API de cálculo de emissões de carbono">
+    
+    <!-- Tema escuro do Docsify -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css">
+    
+    <!-- Estilos Customizados -->
+    <style>
+        :root {
+            --base-background-color: #0a0a0a;
+            --base-color: #e8e8e8;
+            --link-color: #00d4aa;
+            --link-color-hover: #00ffcc;
+            --sidebar-background: #121212;
+            --sidebar-nav-link-color: #cccccc;
+            --sidebar-nav-link-color--active: #ffffff;
+            --sidebar-nav-link-border-color--active: #00d4aa;
+        }
+        
+        /* Logo e Header */
+        .app-name {
+            padding: 15px 0;
+        }
+        
+        .app-name-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--base-color);
+            font-weight: 500;
+        }
+        
+        .app-name-link img {
+            height: 36px;
+            margin-right: 12px;
+            filter: brightness(0) invert(1);
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background-color: var(--sidebar-background);
+            border-right: 1px solid #333;
+        }
+        
+        .sidebar ul {
+            padding-left: 0;
+        }
+        
+        .sidebar ul li {
+            list-style: none;
+            margin: 5px 0;
+        }
+        
+        .sidebar ul li a {
+            display: block;
+            padding: 10px 20px;
+            color: var(--sidebar-nav-link-color);
+            text-decoration: none;
+            border-left: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .sidebar ul li a:hover {
+            color: var(--link-color-hover);
+            background: rgba(0, 212, 170, 0.1);
+        }
+        
+        .sidebar ul li.active > a {
+            color: var(--sidebar-nav-link-color--active);
+            border-left-color: var(--sidebar-nav-link-border-color--active);
+            background: rgba(0, 212, 170, 0.15);
+            font-weight: 500;
+        }
+        
+        /* Conteúdo Principal */
+        .content {
+            background-color: var(--base-background-color);
+            padding: 40px;
+        }
+        
+        .markdown-section {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .markdown-section h1 {
+            color: #ffffff;
+            border-bottom: 2px solid #00d4aa;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .markdown-section h2 {
+            color: #ffffff;
+            margin-top: 40px;
+            padding-bottom: 10px;
+        }
+        
+        .markdown-section h3 {
+            color: #cccccc;
+        }
+        
+        /* Códigos */
+        .markdown-section pre {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 6px;
+        }
+        
+        .markdown-section code {
+            background-color: #1a1a1a;
+            color: #00d4aa;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        
+        /* Tabelas */
+        .markdown-section table {
+            border: 1px solid #333;
+            background-color: #121212;
+        }
+        
+        .markdown-section table tr:nth-child(2n) {
+            background-color: #1a1a1a;
+        }
+        
+        .markdown-section table th {
+            background-color: #00d4aa;
+            color: #000000;
+            font-weight: 600;
+        }
+        
+        .markdown-section table td {
+            border: 1px solid #333;
+        }
+        
+        /* Botões e Links */
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: var(--link-color-hover);
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #333;
+            margin-top: 40px;
+        }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+            
+            .markdown-section {
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div id="app"></div>
-  <script>
-    window.$docsify = {
-      name: '📊 Calculadora de Emissões',
-      repo: 'https://github.com/ZNIT-Tech/calculadora_emissoes.git',
-      loadSidebar: true,
-      subMaxLevel: 3,
-      auto2top: true,
-      search: {
-        placeholder: 'Pesquisar...',
-        noData: 'Não encontrado!',
-        depth: 3
-      },
-      plugins: [
-        function(hook, vm) {
-          hook.beforeEach(function(content) {
-            return content.replace(/\[x\]/g, '<input type="checkbox" checked disabled>')
-                         .replace(/\[ \]/g, '<input type="checkbox" disabled>');
-          });
+    <div id="app"></div>
+    
+    <script>
+        window.$docsify = {
+            name: 'Calculadora de Emissões',
+            logo: 'assets/logo.png',
+            loadSidebar: true,
+            subMaxLevel: 2,
+            auto2top: true,
+            alias: {
+                '/.*/_sidebar.md': '/_sidebar.md'
+            },
+            search: {
+                placeholder: 'Buscar na documentação...',
+                noData: 'Nada encontrado.',
+                depth: 3
+            },
+            pagination: {
+                previousText: 'Anterior',
+                nextText: 'Próximo',
+                crossChapter: true
+            }
         }
-      ]
-    }
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-json.min.js"></script>
+    </script>
+    
+    <!-- Docsify Core -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    
+    <!-- Plugin para mostrar logo -->
+    <script>
+        (function() {
+            // Adiciona logo à sidebar
+            var logo = window.$docsify.logo;
+            if (logo) {
+                window.$docsify = Object.assign({}, window.$docsify, {
+                    alias: Object.assign({}, window.$docsify.alias, {
+                        '/.*/_sidebar.md': '/_sidebar.md'
+                    })
+                });
+                
+                // Hook para adicionar logo
+                window.$docsify.plugins = [].concat(window.$docsify.plugins || [], function(hook) {
+                    hook.beforeEach(function(content) {
+                        return content;
+                    });
+                    
+                    hook.doneEach(function() {
+                        var sidebar = document.querySelector('.sidebar');
+                        if (sidebar && !document.querySelector('.custom-logo')) {
+                            var logoDiv = document.createElement('div');
+                            logoDiv.className = 'custom-logo';
+                            logoDiv.style.padding = '20px';
+                            logoDiv.style.textAlign = 'center';
+                            logoDiv.style.borderBottom = '1px solid #333';
+                            logoDiv.innerHTML = '<img src="' + logo + '" alt="Logo" style="height: 40px;">';
+                            sidebar.insertBefore(logoDiv, sidebar.firstChild);
+                        }
+                    });
+                });
+            }
+        })();
+    </script>
 </body>
 </html>

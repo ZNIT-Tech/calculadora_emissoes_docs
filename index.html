@@ -2,13 +2,17 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Calculadora de Emissões | ZNIT</title>
+    <title>API Calculadora de Emissões de Carbono | ZNIT</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Documentação da API de cálculo de emissões de carbono">
+    <meta name="description" content="Documentação completa da API de cálculo de emissões de carbono para desenvolvedores">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Tema escuro do Docsify -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css">
+    
+    <!-- Plugin de códigos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     
     <!-- Estilos Customizados -->
     <style>
@@ -21,54 +25,96 @@
             --sidebar-nav-link-color: #cccccc;
             --sidebar-nav-link-color--active: #ffffff;
             --sidebar-nav-link-border-color--active: #00d4aa;
+            --primary-color: #00d4aa;
+            --secondary-color: #1a6b5c;
+            --accent-color: #ff6b6b;
+            --card-bg: #1a1a1a;
+            --gradient-primary: linear-gradient(135deg, #00d4aa 0%, #008f75 100%);
+            --gradient-dark: linear-gradient(135deg, #121212 0%, #0a0a0a 100%);
         }
         
-        /* Logo e Header */
+        /* Reset e base */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--base-background-color);
+            color: var(--base-color);
+            line-height: 1.6;
+        }
+        
+        /* Header e Logo */
         .app-name {
-            padding: 15px 0;
+            padding: 20px 0;
+            background: var(--gradient-dark);
+            border-bottom: 1px solid #333;
         }
         
         .app-name-link {
             display: flex;
             align-items: center;
+            justify-content: center;
             text-decoration: none;
             color: var(--base-color);
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 0 20px;
         }
         
         .app-name-link img {
-            height: 36px;
-            margin-right: 12px;
+            height: 42px;
+            margin-right: 15px;
             filter: brightness(0) invert(1);
         }
         
-        /* Sidebar */
+        .app-name-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .app-subtitle {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            font-weight: 400;
+            margin-top: 2px;
+        }
+        
+        /* Sidebar melhorada */
         .sidebar {
             background-color: var(--sidebar-background);
             border-right: 1px solid #333;
+            width: 280px;
+            box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
         }
         
         .sidebar ul {
             padding-left: 0;
+            margin: 0;
         }
         
         .sidebar ul li {
             list-style: none;
-            margin: 5px 0;
+            margin: 2px 0;
         }
         
         .sidebar ul li a {
-            display: block;
-            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            padding: 12px 24px;
             color: var(--sidebar-nav-link-color);
             text-decoration: none;
-            border-left: 3px solid transparent;
-            transition: all 0.2s ease;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
         }
         
         .sidebar ul li a:hover {
             color: var(--link-color-hover);
             background: rgba(0, 212, 170, 0.1);
+            padding-left: 28px;
         }
         
         .sidebar ul li.active > a {
@@ -78,72 +124,258 @@
             font-weight: 500;
         }
         
+        .sidebar-icon {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
         /* Conteúdo Principal */
         .content {
             background-color: var(--base-background-color);
             padding: 40px;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 212, 170, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 212, 170, 0.05) 0%, transparent 20%);
         }
         
         .markdown-section {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         
         .markdown-section h1 {
             color: #ffffff;
-            border-bottom: 2px solid #00dfb2;
+            border-bottom: 2px solid var(--primary-color);
             padding-bottom: 15px;
             margin-bottom: 30px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .markdown-section h2 {
             color: #ffffff;
             margin-top: 40px;
             padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+            font-size: 1.8rem;
+            font-weight: 600;
         }
         
         .markdown-section h3 {
             color: #cccccc;
+            font-size: 1.4rem;
+            margin-top: 30px;
         }
         
-        /* Códigos */
+        /* Cards para seções */
+        .info-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-title i {
+            margin-right: 10px;
+        }
+        
+        /* Códigos melhorados */
         .markdown-section pre {
             background-color: #1a1a1a;
             border: 1px solid #333;
-            border-radius: 6px;
+            border-radius: 8px;
+            padding: 20px;
+            overflow-x: auto;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
         }
         
         .markdown-section code {
-            background-color: #1a1a1a;
+            background-color: rgba(0, 212, 170, 0.1);
             color: #00ffcc;
-            padding: 2px 6px;
+            padding: 3px 8px;
             border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
         }
         
-        /* Tabelas */
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #111;
+            padding: 10px 15px;
+            border-radius: 8px 8px 0 0;
+            border: 1px solid #333;
+            border-bottom: none;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+        }
+        
+        .code-language {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .copy-button {
+            background: var(--gradient-primary);
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        
+        .copy-button:hover {
+            opacity: 0.9;
+        }
+        
+        /* Tabelas aprimoradas */
         .markdown-section table {
             border: 1px solid #333;
-            background-color: #121212;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            margin: 20px 0;
         }
         
         .markdown-section table tr:nth-child(2n) {
-            background-color: #1a1a1a;
+            background-color: rgba(0, 212, 170, 0.05);
         }
         
         .markdown-section table th {
-            background-color: #00d4aa;
+            background: var(--gradient-primary);
             color: #000000;
             font-weight: 600;
+            padding: 15px;
+            text-align: left;
         }
         
         .markdown-section table td {
             border: 1px solid #333;
+            padding: 12px 15px;
+        }
+        
+        .markdown-section table tr:hover {
+            background-color: rgba(0, 212, 170, 0.1);
+        }
+        
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 0 5px;
+        }
+        
+        .badge-get {
+            background-color: #61affe;
+            color: #000;
+        }
+        
+        .badge-post {
+            background-color: #49cc90;
+            color: #000;
+        }
+        
+        .badge-put {
+            background-color: #fca130;
+            color: #000;
+        }
+        
+        .badge-delete {
+            background-color: #f93e3e;
+            color: #fff;
+        }
+        
+        /* Endpoint styling */
+        .endpoint {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid;
+        }
+        
+        .endpoint.get {
+            border-left-color: #61affe;
+        }
+        
+        .endpoint.post {
+            border-left-color: #49cc90;
+        }
+        
+        .endpoint.put {
+            border-left-color: #fca130;
+        }
+        
+        .endpoint.delete {
+            border-left-color: #f93e3e;
+        }
+        
+        .endpoint-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .endpoint-method {
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 4px;
+            margin-right: 15px;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .endpoint-method.get {
+            background-color: #61affe;
+            color: #000;
+        }
+        
+        .endpoint-method.post {
+            background-color: #49cc90;
+            color: #000;
+        }
+        
+        .endpoint-url {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 15px;
+            border-radius: 4px;
+            flex-grow: 1;
+            word-break: break-all;
         }
         
         /* Botões e Links */
         a {
             color: var(--link-color);
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         
         a:hover {
@@ -151,14 +383,42 @@
             text-decoration: underline;
         }
         
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--gradient-primary);
+            color: #000;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 212, 170, 0.4);
+            text-decoration: none;
+            color: #000;
+        }
+        
         /* Footer */
         .footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             color: #666;
             font-size: 14px;
             border-top: 1px solid #333;
             margin-top: 40px;
+            background: var(--gradient-dark);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
         }
         
         /* Responsivo */
@@ -170,6 +430,118 @@
             .markdown-section {
                 padding: 10px;
             }
+            
+            .sidebar {
+                width: 100%;
+            }
+            
+            .app-name-link {
+                justify-content: flex-start;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .markdown-section > * {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        /* Scrollbar personalizada */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00ffcc;
+        }
+        
+        /* Status indicators */
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-active {
+            background-color: #49cc90;
+            box-shadow: 0 0 5px #49cc90;
+        }
+        
+        .status-inactive {
+            background-color: #f93e3e;
+            box-shadow: 0 0 5px #f93e3e;
+        }
+        
+        /* Alertas */
+        .alert {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid;
+        }
+        
+        .alert-info {
+            background-color: rgba(0, 212, 170, 0.1);
+            border-left-color: var(--primary-color);
+        }
+        
+        .alert-warning {
+            background-color: rgba(252, 161, 48, 0.1);
+            border-left-color: #fca130;
+        }
+        
+        .alert-success {
+            background-color: rgba(73, 204, 144, 0.1);
+            border-left-color: #49cc90;
+        }
+        
+        /* Tabs */
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #333;
+            margin: 20px 0;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .tab.active {
+            border-bottom-color: var(--primary-color);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px 0;
+        }
+        
+        .tab-content.active {
+            display: block;
         }
     </style>
 </head>
@@ -178,58 +550,139 @@
     
     <script>
         window.$docsify = {
-            name: 'Calculadora de Emissões',
             logo: 'assets/logo-znit.png',
             loadSidebar: true,
-            subMaxLevel: 2,
+            subMaxLevel: 3,
             auto2top: true,
             alias: {
                 '/.*/_sidebar.md': '/_sidebar.md'
             },
             search: {
                 placeholder: 'Buscar na documentação...',
-                noData: 'Nada encontrado.',
-                depth: 3
+                noData: 'Nenhum resultado encontrado.',
+                depth: 4,
+                pathNamespaces: ['/api', '/guia', '/exemplos']
             },
             pagination: {
-                previousText: 'Anterior',
-                nextText: 'Próximo',
-                crossChapter: true
-            }
-        }
+                previousText: '← Anterior',
+                nextText: 'Próximo →',
+                crossChapter: true,
+                crossChapterText: true
+            },
+            themeColor: '#00d4aa',
+            coverpage: false,
+            loadNavbar: false,
+            mergeNavbar: false,
+            formatUpdated: '{YYYY}-{MM}-{DD} {HH}:{mm}',
+            executeScript: true,
+            noEmoji: false,
+            plugins: [
+                function(hook, vm) {
+                    hook.beforeEach(function(content) {
+                        // Adiciona ícones aos títulos
+                        content = content.replace(/^## (Introdução)/gm, '## <i class="fas fa-book"></i> $1');
+                        content = content.replace(/^## (Autenticação)/gm, '## <i class="fas fa-key"></i> $1');
+                        content = content.replace(/^## (Endpoints)/gm, '## <i class="fas fa-code"></i> $1');
+                        content = content.replace(/^## (Exemplos)/gm, '## <i class="fas fa-vial"></i> $1');
+                        content = content.replace(/^## (Referência)/gm, '## <i class="fas fa-bookmark"></i> $1');
+                        content = content.replace(/^## (FAQ)/gm, '## <i class="fas fa-question-circle"></i> $1');
+                        
+                        return content;
+                    });
+                    
+                    hook.doneEach(function() {
+                        // Adiciona funcionalidade de copiar código
+                        document.querySelectorAll('pre').forEach((block) => {
+                            const codeHeader = document.createElement('div');
+                            codeHeader.className = 'code-header';
+                            
+                            const language = document.createElement('span');
+                            language.className = 'code-language';
+                            language.textContent = 'Código';
+                            
+                            const copyButton = document.createElement('button');
+                            copyButton.className = 'copy-button';
+                            copyButton.innerHTML = '<i class="fas fa-copy"></i> Copiar';
+                            
+                            copyButton.addEventListener('click', function() {
+                                const code = block.querySelector('code').textContent;
+                                navigator.clipboard.writeText(code).then(() => {
+                                    const originalText = copyButton.innerHTML;
+                                    copyButton.innerHTML = '<i class="fas fa-check"></i> Copiado!';
+                                    copyButton.style.background = '#49cc90';
+                                    
+                                    setTimeout(() => {
+                                        copyButton.innerHTML = originalText;
+                                        copyButton.style.background = '';
+                                    }, 2000);
+                                });
+                            });
+                            
+                            codeHeader.appendChild(language);
+                            codeHeader.appendChild(copyButton);
+                            block.parentNode.insertBefore(codeHeader, block);
+                        });
+                        
+                        // Adiciona funcionalidade de tabs
+                        document.querySelectorAll('.tabs').forEach((tabContainer) => {
+                            const tabs = tabContainer.querySelectorAll('.tab');
+                            const tabContents = document.querySelectorAll('.tab-content');
+                            
+                            tabs.forEach((tab, index) => {
+                                tab.addEventListener('click', () => {
+                                    // Remove classe active de todas as tabs
+                                    tabs.forEach(t => t.classList.remove('active'));
+                                    tabContents.forEach(c => c.classList.remove('active'));
+                                    
+                                    // Adiciona classe active à tab clicada
+                                    tab.classList.add('active');
+                                    
+                                    // Mostra o conteúdo correspondente
+                                    if (tabContents[index]) {
+                                        tabContents[index].classList.add('active');
+                                    }
+                                });
+                            });
+                        });
+                        
+                        // Adiciona status indicators
+                        document.querySelectorAll('.status-active, .status-inactive').forEach((status) => {
+                            const text = status.textContent;
+                            status.innerHTML = `<span class="status-indicator ${status.classList.contains('status-active') ? 'status-active' : 'status-inactive'}"></span>${text}`;
+                        });
+                    });
+                }
+            ]
+        };
     </script>
     
-    <!-- Docsify Core -->
+    <!-- Docsify Core e Plugins -->
     <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     
     <!-- Plugin para mostrar logo -->
     <script>
         (function() {
-            // Adiciona logo à sidebar
             var logo = window.$docsify.logo;
             if (logo) {
-                window.$docsify = Object.assign({}, window.$docsify, {
-                    alias: Object.assign({}, window.$docsify.alias, {
-                        '/.*/_sidebar.md': '/_sidebar.md'
-                    })
-                });
-                
-                // Hook para adicionar logo
                 window.$docsify.plugins = [].concat(window.$docsify.plugins || [], function(hook) {
-                    hook.beforeEach(function(content) {
-                        return content;
-                    });
-                    
                     hook.doneEach(function() {
                         var sidebar = document.querySelector('.sidebar');
                         if (sidebar && !document.querySelector('.custom-logo')) {
                             var logoDiv = document.createElement('div');
                             logoDiv.className = 'custom-logo';
-                            logoDiv.style.padding = '20px';
+                            logoDiv.style.padding = '25px 20px';
                             logoDiv.style.textAlign = 'center';
                             logoDiv.style.borderBottom = '1px solid #333';
-                            logoDiv.innerHTML = '<img src="' + logo + '" alt="Logo" style="height: 40px;">';
+                            logoDiv.style.background = 'linear-gradient(135deg, #121212 0%, #0a0a0a 100%)';
+                            logoDiv.innerHTML = `
+                                <img src="${logo}" alt="Logo ZNIT" style="height: 50px; margin-bottom: 10px;">
+                                <div style="color: #00d4aa; font-weight: 600; font-size: 1.1rem;">API de Emissões</div>
+                                <div style="color: #888; font-size: 0.8rem; margin-top: 5px;">v0.0.0</div>
+                            `;
                             sidebar.insertBefore(logoDiv, sidebar.firstChild);
                         }
                     });

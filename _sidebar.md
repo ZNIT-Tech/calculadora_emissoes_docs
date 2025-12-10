@@ -6,7 +6,8 @@
 - [Introdução](introducao.md)
 
 **API Reference**
-- *[Em breve]* Endpoints
+- [Escopo 1](escopo1.md)
+    - [Combustão Móvel 1](combustao_movel_1.md)
 
 **Desenvolvimento**
 - *[Em breve]* Configuração

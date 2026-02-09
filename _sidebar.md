@@ -7,7 +7,9 @@
 
 **API Reference**
 - [Escopo 1](escopo1.md)
+    - [Combustão Estacionária](combustao_estacionaria.md)
     - [Combustão Móvel 1](combustao_movel_1.md)
+    
 
 **Desenvolvimento**
 - *[Em breve]* Configuração

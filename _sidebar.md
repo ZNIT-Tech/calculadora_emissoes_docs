@@ -6,6 +6,7 @@
 - [Introdução](introducao.md)
 
 **API Reference**
+- [Dashboard](dashboard.md)
 - [Escopo 1](escopo1.md)
     - [Combustão Estacionária](combustao_estacionaria.md)
     - [Combustão Móvel 1](combustao_movel_1.md)

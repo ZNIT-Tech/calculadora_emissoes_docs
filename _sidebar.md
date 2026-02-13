@@ -20,7 +20,10 @@
     - [Fugitivas 2](escopo_1/fugitivas_2.md)
     - [Fugitivas 3](escopo_1/fugitivas_3.md)
     - [Mudança de Solo](escopo_1/mudanca_de_solo.md)
-    
+
+### Escopo 3
+- [Escopo 3](escopo_3/escopo3.md)
+    - [Casa Trabalho 1](escopo_3/casa_trabalho_1.md)
 
 **Desenvolvimento**
 - *[Em breve]* Configuração

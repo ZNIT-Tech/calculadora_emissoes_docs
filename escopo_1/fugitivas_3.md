@@ -42,7 +42,7 @@ Calcula emissões de GEE para uma operação com equipamentos de refrigeração 
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X POST "http://localhost:8080/api/fugitivas-3/calcular" \
+curl -X POST "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/fugitivas-3/calcular" \
   -H "Content-Type: application/json" \
   -H "X-API-Key: sua-api-key" \
   -d '{
@@ -149,7 +149,7 @@ Calcula e persiste emissões de GEE para uma operação com equipamentos de refr
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X POST "http://localhost:8080/api/fugitivas-3" \
+curl -X POST "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/fugitivas-3" \
   -H "Content-Type: application/json" \
   -H "X-API-Key: sua-api-key" \
   -d '{
@@ -222,7 +222,7 @@ Consulta emissões de fugitivas 3 agregadas por unidade de negócio, com possibi
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/fugitivas-3/unidade?id_unidade=680a4fe4-d2f1-4f2d-ab99-556effb557c9&nivel=2&incluir_descendentes=true" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/fugitivas-3/unidade?id_unidade=680a4fe4-d2f1-4f2d-ab99-556effb557c9&nivel=2&incluir_descendentes=true" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -281,7 +281,7 @@ Consulta detalhes completos de um documento específico de fugitivas 3.
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/fugitivas-3/550e8400-e29b-41d4-a716-446655440000/detalhes" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/fugitivas-3/550e8400-e29b-41d4-a716-446655440000/detalhes" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -353,7 +353,7 @@ Nenhum.
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/fugitivas-3/gases" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/fugitivas-3/gases" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -394,7 +394,7 @@ Lista todos os equipamentos refrigeradores disponíveis para fugitivas 3, opcion
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/fugitivas-3/refrigeradores?versao_ghg=v2025.0.1" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/fugitivas-3/refrigeradores?versao_ghg=v2025.0.1" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -441,7 +441,7 @@ Retorna a hierarquia completa de emissões de fugitivas 3 para uma empresa, agre
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/fugitivas-3/hierarquia-completa?id_empresa=dd68b58c-9155-42df-97ba-8ec86953c360&nivel_inicio=1&ano=2024" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/fugitivas-3/hierarquia-completa?id_empresa=dd68b58c-9155-42df-97ba-8ec86953c360&nivel_inicio=1&ano=2024" \
   -H "X-API-Key: sua-api-key"
 ```
 

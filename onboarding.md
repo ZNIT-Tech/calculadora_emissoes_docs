@@ -68,7 +68,7 @@ Cria uma nova empresa **completa**, incluindo:
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X POST "http://localhost:8080/api/onboarding/admin/empresas" \
+curl -X POST "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/onboarding/admin/empresas" \
   -H "Content-Type: application/json" \
   -H "X-API-Key: sua-chave-admin" \
   -d '{
@@ -145,7 +145,7 @@ Todos os campos de endereço e `obs`.
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X POST "http://localhost:8080/api/onboarding/teste" \
+curl -X POST "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/onboarding/teste" \
   -H "Content-Type: application/json" \
   -d '{
     "nome": "Empresa Teste",

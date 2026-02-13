@@ -42,7 +42,7 @@ Calcula emissões de GEE para uma fonte móvel específica **SEM persistir no ba
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X POST "http://localhost:8080/api/combustao-movel-2/calcular" \
+curl -X POST "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-2/calcular" \
   -H "Content-Type: application/json" \
   -H "X-API-Key: sua-api-key" \
   -d '{
@@ -119,7 +119,7 @@ Calcula e persiste emissões de GEE para uma fonte móvel **com persistência no
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X POST "http://localhost:8080/api/combustao-movel-2" \
+curl -X POST "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-2" \
   -H "Content-Type: application/json" \
   -H "X-API-Key: sua-api-key" \
   -d '{
@@ -182,7 +182,7 @@ Consulta detalhes completos de um documento específico de combustão móvel 2, 
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-movel-2/550e8400-e29b-41d4-a716-446655440000/detalhes" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-2/550e8400-e29b-41d4-a716-446655440000/detalhes" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -245,7 +245,7 @@ Lista todos os combustíveis disponíveis para combustão móvel 2, podendo ser 
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-movel-2/combustiveis?cnpj_empresa=00.000.000/0001-91" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-2/combustiveis?cnpj_empresa=00.000.000/0001-91" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -298,7 +298,7 @@ Retorna a hierarquia completa de emissões de combustão móvel 2 para uma empre
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-movel-2/hierarquia-completa?id_empresa=dd68b58c-9155-42df-97ba-8ec86953c360&nivel_inicio=1&ano=2024" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-2/hierarquia-completa?id_empresa=dd68b58c-9155-42df-97ba-8ec86953c360&nivel_inicio=1&ano=2024" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -368,7 +368,7 @@ Retorna um resumo estatístico das emissões de combustão móvel 2 para uma emp
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-movel-2/resumo?id_empresa=dd68b58c-9155-42df-97ba-8ec86953c360&ano=2024" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-2/resumo?id_empresa=dd68b58c-9155-42df-97ba-8ec86953c360&ano=2024" \
   -H "X-API-Key: sua-api-key"
 ```
 

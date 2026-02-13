@@ -43,7 +43,7 @@ Calcula emissões de GEE para um veículo específico **SEM persistir no banco**
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X POST "http://localhost:8080/api/combustao-movel-3/calcular" \
+curl -X POST "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-3/calcular" \
   -H "Content-Type: application/json" \
   -H "X-API-Key: sua-api-key" \
   -d '{
@@ -135,7 +135,7 @@ Calcula e persiste emissões de GEE para um veículo **com persistência no banc
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X POST "http://localhost:8080/api/combustao-movel-3" \
+curl -X POST "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-3" \
   -H "Content-Type: application/json" \
   -H "X-API-Key: sua-api-key" \
   -d '{
@@ -204,7 +204,7 @@ Consulta emissões de combustão móvel 3 agregadas por unidade de negócio, com
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-movel-3/unidade?id_unidade=680a4fe4-d2f1-4f2d-ab99-556effb557c9&nivel=2&incluir_descendentes=true" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-3/unidade?id_unidade=680a4fe4-d2f1-4f2d-ab99-556effb557c9&nivel=2&incluir_descendentes=true" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -267,7 +267,7 @@ Consulta detalhes completos de um documento específico de combustão móvel 3.
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-movel-3/550e8400-e29b-41d4-a716-446655440000/detalhes" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-3/550e8400-e29b-41d4-a716-446655440000/detalhes" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -331,7 +331,7 @@ Lista todos os veículos disponíveis para cálculo de combustão móvel 3, opci
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-movel-3/veiculos?versao_ghg=2023" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-3/veiculos?versao_ghg=2023" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -384,7 +384,7 @@ Retorna a hierarquia completa de emissões de combustão móvel 3 para uma empre
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-movel-3/hierarquia-completa?id_empresa=dd68b58c-9155-42df-97ba-8ec86953c360&nivel_inicio=1&ano=2024" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-3/hierarquia-completa?id_empresa=dd68b58c-9155-42df-97ba-8ec86953c360&nivel_inicio=1&ano=2024" \
   -H "X-API-Key: sua-api-key"
 ```
 

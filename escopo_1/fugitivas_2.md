@@ -42,7 +42,7 @@ Calcula emissões de GEE para uma operação com gases **SEM persistir no banco*
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X POST "http://localhost:8080/api/fugitivas-2/calcular" \
+curl -X POST "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/fugitivas-2/calcular" \
   -H "Content-Type: application/json" \
   -H "X-API-Key: sua-api-key" \
   -d '{
@@ -141,7 +141,7 @@ Calcula e persiste emissões de GEE para uma operação com gases **com persist�
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X POST "http://localhost:8080/api/fugitivas-2" \
+curl -X POST "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/fugitivas-2" \
   -H "Content-Type: application/json" \
   -H "X-API-Key: sua-api-key" \
   -d '{
@@ -211,7 +211,7 @@ Consulta emissões de fugitivas 2 agregadas por unidade de negócio, com possibi
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/fugitivas-2/unidade?id_unidade=680a4fe4-d2f1-4f2d-ab99-556effb557c9&nivel=2&incluir_descendentes=true" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/fugitivas-2/unidade?id_unidade=680a4fe4-d2f1-4f2d-ab99-556effb557c9&nivel=2&incluir_descendentes=true" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -269,7 +269,7 @@ Consulta detalhes completos de um documento específico de fugitivas 2.
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/fugitivas-2/550e8400-e29b-41d4-a716-446655440000/detalhes" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/fugitivas-2/550e8400-e29b-41d4-a716-446655440000/detalhes" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -330,7 +330,7 @@ Nenhum.
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/fugitivas-2/gases" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/fugitivas-2/gases" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -391,7 +391,7 @@ Retorna um resumo estatístico das emissões de fugitivas 2 para uma empresa, co
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/fugitivas-2/empresa/dd68b58c-9155-42df-97ba-8ec86953c360/resumo?ano=2024" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/fugitivas-2/empresa/dd68b58c-9155-42df-97ba-8ec86953c360/resumo?ano=2024" \
   -H "X-API-Key: sua-api-key"
 ```
 

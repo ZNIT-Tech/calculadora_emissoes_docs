@@ -17,7 +17,7 @@ Retorna o status e disponibilidade dos dados do dashboard para uma empresa espec
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X GET "http://localhost:8080/api/dashboard/escopo1/status?id_empresa=bf725c29-2b8c-46dc-a3ad-880e511e7804" \
+curl -X GET "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/dashboard/escopo1/status?id_empresa=bf725c29-2b8c-46dc-a3ad-880e511e7804" \
   -H "X-API-Key: sua-chave-api"
 ```
 
@@ -69,7 +69,7 @@ Retorna a quantidade e estatísticas de documentos do Escopo 1, com opções de 
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X GET "http://localhost:8080/api/dashboard/escopo1/documentos?id_empresa=bf725c29-2b8c-46dc-a3ad-880e511e7804&data_inicio=2024-01-01&data_fim=2024-12-31" \
+curl -X GET "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/dashboard/escopo1/documentos?id_empresa=bf725c29-2b8c-46dc-a3ad-880e511e7804&data_inicio=2024-01-01&data_fim=2024-12-31" \
   -H "X-API-Key: sua-chave-api"
 ```
 
@@ -129,7 +129,7 @@ Retorna as emissões totais do Escopo 1 em tCO2e, com opções de agrupamento.
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X GET "http://localhost:8080/api/dashboard/escopo1/emissoes-totais?id_empresa=bf725c29-2b8c-46dc-a3ad-880e511e7804&agrupar_por=categoria&data_inicio=2024-01-01&data_fim=2024-12-31" \
+curl -X GET "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/dashboard/escopo1/emissoes-totais?id_empresa=bf725c29-2b8c-46dc-a3ad-880e511e7804&agrupar_por=categoria&data_inicio=2024-01-01&data_fim=2024-12-31" \
   -H "X-API-Key: sua-chave-api"
 ```
 
@@ -180,7 +180,7 @@ Retorna o total de emissões somando todos os escopos (1, 2 e 3) para uma empres
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X GET "http://localhost:8080/api/dashboard/emissoes-todos-escopos?id_empresa=bf725c29-2b8c-46dc-a3ad-880e511e7804&ano=2024" \
+curl -X GET "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/dashboard/emissoes-todos-escopos?id_empresa=bf725c29-2b8c-46dc-a3ad-880e511e7804&ano=2024" \
   -H "X-API-Key: sua-chave-api"
 ```
 
@@ -236,7 +236,7 @@ Retorna tendências de emissões do Escopo 1 ao longo dos anos, com análise de 
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X GET "http://localhost:8080/api/dashboard/escopo1/tendencias?id_empresa=bf725c29-2b8c-46dc-a3ad-880e511e7804&anos_comparacao=5" \
+curl -X GET "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/dashboard/escopo1/tendencias?id_empresa=bf725c29-2b8c-46dc-a3ad-880e511e7804&anos_comparacao=5" \
   -H "X-API-Key: sua-chave-api"
 ```
 
@@ -299,7 +299,7 @@ Retorna métricas de performance do Escopo 1, incluindo comparação com ano ant
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X GET "http://localhost:8080/api/dashboard/escopo1/performance?id_empresa=bf725c29-2b8c-46dc-a3ad-880e511e7804&ano=2024" \
+curl -X GET "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/dashboard/escopo1/performance?id_empresa=bf725c29-2b8c-46dc-a3ad-880e511e7804&ano=2024" \
   -H "X-API-Key: sua-chave-api"
 ```
 
@@ -342,7 +342,7 @@ Retorna um relatório consolidado completo do Escopo 1, incluindo resumo executi
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X GET "http://localhost:8080/api/dashboard/escopo1/relatorio-consolidado?id_empresa=bf725c29-2b8c-46dc-a3ad-880e511e7804&ano=2024" \
+curl -X GET "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/dashboard/escopo1/relatorio-consolidado?id_empresa=bf725c29-2b8c-46dc-a3ad-880e511e7804&ano=2024" \
   -H "X-API-Key: sua-chave-api"
 ```
 

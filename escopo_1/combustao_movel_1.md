@@ -45,7 +45,7 @@ Calcula emissões de GEE para um veículo específico **SEM persistir no banco**
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X POST "http://localhost:8080/api/combustao-movel-1/calcular" \
+curl -X POST "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-1/calcular" \
   -H "Content-Type: application/json" \
   -H "X-API-Key: sua-api-key" \
   -d '{
@@ -138,7 +138,7 @@ Calcula e persiste emissões de GEE para um veículo **com persistência no banc
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X POST "http://localhost:8080/api/combustao-movel-1" \
+curl -X POST "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-1" \
   -H "Content-Type: application/json" \
   -H "X-API-Key: sua-api-key" \
   -d '{
@@ -210,7 +210,7 @@ Consulta emissões de combustão móvel 1 agregadas por unidade de negócio, com
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-movel-1/unidade?id_unidade=680a4fe4-d2f1-4f2d-ab99-556effb557c9&nivel=2&incluir_descendentes=true" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-1/unidade?id_unidade=680a4fe4-d2f1-4f2d-ab99-556effb557c9&nivel=2&incluir_descendentes=true" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -272,7 +272,7 @@ Retorna a hierarquia completa de emissões de combustão móvel 1 para uma empre
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-movel-1/hierarquia-completa?id_empresa=dd68b58c-9155-42df-97ba-8ec86953c360&nivel_inicio=1&data_inicio=2024-01-01&data_fim=2024-12-31" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-1/hierarquia-completa?id_empresa=dd68b58c-9155-42df-97ba-8ec86953c360&nivel_inicio=1&data_inicio=2024-01-01&data_fim=2024-12-31" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -337,7 +337,7 @@ Consulta detalhada com agregação por tipo de veículo ou por documento.
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-movel-1/detalhado?id_unidade=680a4fe4-d2f1-4f2d-ab99-556effb557c9&nivel=2&agrupar_por=veiculo&data_inicio=2024-01-01" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-1/detalhado?id_unidade=680a4fe4-d2f1-4f2d-ab99-556effb557c9&nivel=2&agrupar_por=veiculo&data_inicio=2024-01-01" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -383,7 +383,7 @@ Lista todos os veículos disponíveis para cálculo, com suporte a filtros.
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-movel-1/veiculos?versao_ghg=v2025.0.1" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-1/veiculos?versao_ghg=v2025.0.1" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -426,7 +426,7 @@ Gera um consolidado de emissões por tipo de veículo para uma empresa.
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-movel-1/consolidado-veiculos?id_empresa=dd68b58c-9155-42df-97ba-8ec86953c360" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-1/consolidado-veiculos?id_empresa=dd68b58c-9155-42df-97ba-8ec86953c360" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -482,7 +482,7 @@ Consulta detalhes de um documento específico de combustão móvel 1.
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-movel-1/documento/550e8400-e29b-41d4-a716-446655440000" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-1/documento/550e8400-e29b-41d4-a716-446655440000" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -547,7 +547,7 @@ Retorna resumo estatístico das emissões de combustão móvel 1 para uma empres
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-movel-1/resumo?id_empresa=dd68b58c-9155-42df-97ba-8ec86953c360&ano=2024" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-movel-1/resumo?id_empresa=dd68b58c-9155-42df-97ba-8ec86953c360&ano=2024" \
   -H "X-API-Key: sua-api-key"
 ```
 

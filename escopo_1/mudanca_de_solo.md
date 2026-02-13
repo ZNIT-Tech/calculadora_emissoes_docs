@@ -60,7 +60,7 @@ Calcula emissões de GEE para uma conversão de uso do solo **SEM persistir no b
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X POST "http://localhost:8080/api/mudanca-uso-solo/calcular" \
+curl -X POST "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/mudanca-uso-solo/calcular" \
   -H "Content-Type: application/json" \
   -H "X-API-Key: sua-api-key" \
   -d '{
@@ -172,7 +172,7 @@ Os mesmos do endpoint `/calcular` (dados primários, fatores personalizados, etc
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X POST "http://localhost:8080/api/mudanca-uso-solo" \
+curl -X POST "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/mudanca-uso-solo" \
   -H "Content-Type: application/json" \
   -H "X-API-Key: sua-api-key" \
   -d '{
@@ -250,7 +250,7 @@ Consulta emissões de mudança no uso do solo agregadas por unidade de negócio,
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/mudanca-uso-solo/unidade?id_unidade=680a4fe4-d2f1-4f2d-ab99-556effb557c9&nivel=2&incluir_descendentes=true" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/mudanca-uso-solo/unidade?id_unidade=680a4fe4-d2f1-4f2d-ab99-556effb557c9&nivel=2&incluir_descendentes=true" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -309,7 +309,7 @@ Consulta detalhes completos de um documento específico de mudança no uso do so
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/mudanca-uso-solo/550e8400-e29b-41d4-a716-446655440000/detalhes" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/mudanca-uso-solo/550e8400-e29b-41d4-a716-446655440000/detalhes" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -380,7 +380,7 @@ Retorna a hierarquia completa de emissões de mudança no uso do solo para uma e
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/mudanca-uso-solo/hierarquia-completa?id_empresa=dd68b58c-9155-42df-97ba-8ec86953c360&nivel_inicio=1&ano=2024" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/mudanca-uso-solo/hierarquia-completa?id_empresa=dd68b58c-9155-42df-97ba-8ec86953c360&nivel_inicio=1&ano=2024" \
   -H "X-API-Key: sua-api-key"
 ```
 

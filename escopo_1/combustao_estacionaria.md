@@ -42,7 +42,7 @@ Calcula emissões de GEE para uma fonte estacionária específica **SEM persisti
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X POST "http://localhost:8080/api/combustao-estacionaria/calcular" \
+curl -X POST "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-estacionaria/calcular" \
   -H "Content-Type: application/json" \
   -H "X-API-Key: sua-api-key" \
   -d '{
@@ -130,7 +130,7 @@ Calcula e persiste emissões de GEE para uma fonte estacionária **com persistê
 
 #### **Exemplo de Uso:**
 ```bash
-curl -X POST "http://localhost:8080/api/combustao-estacionaria" \
+curl -X POST "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-estacionaria" \
   -H "Content-Type: application/json" \
   -H "X-API-Key: sua-api-key" \
   -d '{
@@ -199,7 +199,7 @@ Consulta emissões por unidade de negócio.
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-estacionaria/unidade?id_unidade=550e8400-e29b-41d4-a716-446655440000&nivel=2" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-estacionaria/unidade?id_unidade=550e8400-e29b-41d4-a716-446655440000&nivel=2" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -264,7 +264,7 @@ Consulta hierarquia completa de uma empresa.
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-estacionaria/hierarquia-completa?id_empresa=123e4567-e89b-12d3-a456-426614174000&nivel_inicio=1&ano=2024" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-estacionaria/hierarquia-completa?id_empresa=123e4567-e89b-12d3-a456-426614174000&nivel_inicio=1&ano=2024" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -323,7 +323,7 @@ Consulta detalhes específicos de um documento de combustão estacionária.
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-estacionaria/123e4567-e89b-12d3-a456-426614174000/detalhes" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-estacionaria/123e4567-e89b-12d3-a456-426614174000/detalhes" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -380,7 +380,7 @@ Lista todos os combustíveis disponíveis para combustão estacionária.
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-estacionaria/combustiveis" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-estacionaria/combustiveis" \
   -H "X-API-Key: sua-api-key"
 ```
 
@@ -416,7 +416,7 @@ Lista todos os setores disponíveis para combustão estacionária.
 
 #### **Exemplo:**
 ```bash
-curl "http://localhost:8080/api/combustao-estacionaria/setores" \
+curl "https://calculadora-emissoes-849629781489.southamerica-east1.run.app/api/combustao-estacionaria/setores" \
   -H "X-API-Key: sua-api-key"
 ```
 

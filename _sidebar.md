@@ -24,6 +24,7 @@
 ### Escopo 3
 - [Escopo 3](escopo_3/escopo3.md)
     - [Casa Trabalho 1](escopo_3/casa_trabalho_1.md)
+    - [Casa Trabalho 2](escopo_3/casa_trabalho_2.md)
 
 **Desenvolvimento**
 - *[Em breve]* Configuração

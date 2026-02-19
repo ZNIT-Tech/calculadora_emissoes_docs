@@ -27,6 +27,7 @@
     - [Casa Trabalho 2](escopo_3/casa_trabalho_2.md)
     - [Casa Trabalho 3](escopo_3/casa_trabalho_3.md)
     - [Distribuição 1](escopo_3/downstream_1.md)
+    - [Distribuição 2](escopo_3/downstream_2.md)
 
 **Desenvolvimento**
 - *[Em breve]* Configuração

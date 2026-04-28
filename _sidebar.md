@@ -6,6 +6,7 @@
 - [Introdução](introducao.md)
 
 ## API Reference
+- [Autenticação e Onboarding](autenticacao-onboarding.md)
 - [Onboarding](onboarding.md)
 - [Dashboard](dashboard.md)
 

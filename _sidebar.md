@@ -4,9 +4,14 @@
 
 **Documentação**
 - [Introdução](introducao.md)
+- [Configuração](configuracao.md)
+- [Testes](testes.md)
+- [FAQ](faq.md)
+- [Contato](contato.md)
 
 ## API Reference
 - [Autenticação e Onboarding](autenticacao-onboarding.md)
+- [Tratamento de Erros da API](error-handling.md)
 - [Onboarding](onboarding.md)
 - [Dashboard](dashboard.md)
 
@@ -51,10 +56,3 @@
     - [Transporte Downstream 3](escopo_3/downstream_3.md)
     - [Transporte Downstream 4](escopo_3/downstream_4.md)
 
-**Desenvolvimento**
-- *[Em breve]* Configuração
-- *[Em breve]* Testes
-
-**Recursos**
-- *[Em breve]* FAQ
-- *[Em breve]* Contato
